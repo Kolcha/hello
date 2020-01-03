@@ -1,0 +1,40 @@
+{
+    "targets": {
+        "xenial-amd64": {
+            "buildenv": "xenial-amd64",
+            "builddeps": [
+                "build-essential",
+                "qtbase5-dev",
+                "qttools5-dev-tools"
+            ],
+            "buildcmd": [
+                "qmake -qt=5 -config release hello.pro",
+                "make -j${PARALLEL}"
+            ]
+        },
+        "bionic-amd64": {
+            "buildenv": "bionic-amd64",
+            "builddeps": [
+                "build-essential",
+                "qtbase5-dev",
+                "qttools5-dev-tools"
+            ],
+            "buildcmd": [
+                "qmake -qt=5 -config release hello.pro",
+                "make -j${PARALLEL}"
+            ]
+        },
+        "macos-x86_64": {
+            "buildenv": "osx",
+            "homebrew": {
+                "formulae": [
+                    "qt"
+                ]
+            },
+            "buildcmd": [
+                "qmake -config release hello.pro",
+                "make -j${PARALLEL}"
+            ]
+        }
+    }
+}
