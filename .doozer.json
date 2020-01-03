@@ -32,6 +32,7 @@
                 ]
             },
             "buildcmd": [
+                "brew link --force qt",
                 "qmake -config release hello.pro",
                 "make -j${PARALLEL}"
             ]

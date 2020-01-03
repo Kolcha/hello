@@ -18,6 +18,7 @@ addons:
       - qt
 
 before_script:
+  - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then brew link --force qt; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export QMAKE_ARGS="-qt=5"; fi
 
 script:
