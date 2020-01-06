@@ -19,9 +19,7 @@ desktopfile.path = /usr/share/applications
 desktopfile.files = hello.desktop
 pixmapfile.path = /usr/share/pixmaps
 pixmapfile.files = hello.png hello.xpm
-iconfile.path = /usr/share/icons/hicolor/scalable/apps
-iconfile.files = hello.svg
-INSTALLS += desktopfile pixmapfile iconfile
+INSTALLS += desktopfile pixmapfile
 
 SOURCES += \
     main.cpp \
