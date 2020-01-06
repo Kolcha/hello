@@ -17,7 +17,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 desktopfile.path = /usr/share/applications
 desktopfile.files = hello.desktop
-INSTALLS += desktopfile
+pixmapfile.path = /usr/share/pixmaps
+pixmapfile.files = minutor.png minutor.xpm
+INSTALLS += desktopfile pixmapfile
 
 SOURCES += \
     main.cpp \

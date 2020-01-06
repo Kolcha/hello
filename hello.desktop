@@ -6,4 +6,4 @@ GenericName=Minecraft Mapping Tool
 Exec=hello
 Icon=hello
 Terminal=false
-Categories=Game;Amusement;Utility;Maps;
+Categories=Utility;FileTools;FileManager;
