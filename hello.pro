@@ -18,8 +18,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 desktopfile.path = /usr/share/applications
 desktopfile.files = hello.desktop
 pixmapfile.path = /usr/share/pixmaps
-pixmapfile.files = minutor.png minutor.xpm
-INSTALLS += desktopfile pixmapfile
+pixmapfile.files = hello.png hello.xpm
+iconfile.path = /usr/share/icons/hicolor/scalable/apps
+iconfile.files = hello.svg
+INSTALLS += desktopfile pixmapfile iconfile
 
 SOURCES += \
     main.cpp \
