@@ -6,15 +6,12 @@ branches:
 
 environment:
   matrix:
-    - compiler: msvc
-      qt: 5.13.2\msvc2017_64
-
-    - compiler: mingw
-      qt: 5.13.2\mingw73_64
+    - qt: 5.12\msvc2017_64
+    - qt: 5.12\mingw73_64
 
 install:
   # download jom for MSVC build
-  - if %compiler% == msvc (
+  - if /i not %qt:msvc=% == %qt% (
       curl -O -J -L -s -S http://download.qt.io/official_releases/jom/jom.zip
       & 7z x *.zip -oC:\jom > nul
       & del *.zip
@@ -23,13 +20,13 @@ install:
 before_build:
   - set src_path=%cd%
   - call "C:\Qt\%qt%\bin\qtenv2.bat"
-  - if %compiler% == msvc call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
-  - if %compiler% == msvc set PATH=C:\jom;%PATH%
+  - if /i not %qt:msvc=% == %qt% call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - if /i not %qt:msvc=% == %qt% set PATH=C:\jom;%PATH%
   - cd %src_path%
 
 build_script:
   - qmake -config release hello.pro
-  - if %compiler% == msvc jom
-  - if %compiler% == mingw mingw32-make -j4
+  - if /i not %qt:msvc=% == %qt% jom
+  - if /i not %qt:mingw=% == %qt% mingw32-make -j4
 
 test: off
