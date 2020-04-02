@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>416</width>
+    <height>453</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Lorem Ipsum (Qt %1)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In volutpat bibendum mi. Fusce elementum nulla quis maximus aliquam. Duis commodo tincidunt dolor quis egestas. Donec volutpat consectetur purus a egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum porta, justo et venenatis eleifend, sem lorem condimentum neque, ut scelerisque diam dui eu ipsum. Sed malesuada sem ut tortor suscipit, a egestas tellus rutrum. Fusce fringilla dolor quis arcu ullamcorper elementum. Ut sagittis erat eu euismod tincidunt. Ut non fringilla augue. Nullam tempor sem vitae leo pulvinar lobortis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Proin rhoncus nisi odio, in elementum ante auctor rhoncus. Phasellus vitae porttitor augue. Sed eget iaculis arcu. In euismod suscipit nibh luctus porttitor. Fusce vel mi eu lacus feugiat ultrices. Morbi nec neque vel libero malesuada convallis. Ut molestie enim ut odio vestibulum dapibus. Morbi ultrices id diam sit amet tempus. Nunc porttitor interdum sapien sit amet porttitor. Nulla porttitor lobortis augue in egestas. Phasellus luctus leo sit amet faucibus consequat. Maecenas non neque vulputate, interdum eros eu, varius lectus. In tincidunt ante eu leo feugiat interdum eget et lorem. Donec tristique arcu ex. Vivamus id mi ac libero facilisis vulputate.
+
+Nulla facilisi. Sed eleifend, velit a viverra gravida, leo eros sollicitudin purus, ac lacinia turpis odio sit amet dolor. Ut nibh quam, varius et justo eget, aliquam accumsan ante. Aliquam tempor turpis et tortor tincidunt hendrerit. Quisque vitae suscipit ipsum, non molestie nunc. In condimentum odio et commodo dapibus. Aenean euismod elit a aliquet cursus. Cras rutrum mollis luctus.
+
+</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignJustify|Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>416</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
