@@ -24,12 +24,3 @@ before_script:
 script:
   - qmake ${QMAKE_ARGS} -config release hello.pro
   - make -j2
-
-deploy:
-  provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
-  target_commitish: master
-  file: hello.png
-  skip_cleanup: true
-  on:
-    tags: true
