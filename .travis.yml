@@ -4,16 +4,16 @@ os:
   - linux
   - osx
 
-dist: focal
-
 jobs:
   include:
     - dist: xenial
     - dist: bionic
+    - dist: focal
 
 osx_image: 
-  - xcode11.4
-  - xcode11.5
+  - xcode9.3
+  - xcode10.3
+  - xcode11.3
 
 addons:
   apt:
