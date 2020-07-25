@@ -20,15 +20,18 @@ addons:
     packages:
       - qtbase5-dev
       - qttools5-dev-tools
+      - cmake
 
   homebrew:
     packages:
       - qt
+      - cmake
 
 before_script:
   - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then brew link --force qt; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export QMAKE_ARGS="-qt=5"; fi
 
 script:
-  - qmake ${QMAKE_ARGS} -config release hello.pro
-  - make -j2
+  - mkdir build && cd build
+  - cmake -DCMAKE_BUILD_TYPE=Release ..
+  - cmake --build . --parallel 2
