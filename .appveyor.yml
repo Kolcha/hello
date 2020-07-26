@@ -3,7 +3,6 @@ image: Visual Studio 2019
 environment:
   matrix:
     - qt: 5.15\msvc2019_64
-    - qt: 5.15\mingw81_64
     - qt: 5.12\mingw73_64
     - qt: 5.9\mingw53_32
 
