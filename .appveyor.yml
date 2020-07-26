@@ -1,14 +1,16 @@
-image: Visual Studio 2017
+image: Visual Studio 2019
 
 environment:
   matrix:
-    - qt: 5.12\msvc2017_64
+    - qt: 5.15\msvc2019_64
+    - qt: 5.15\mingw81_64
     - qt: 5.12\mingw73_64
+    - qt: 5.9\mingw53_32
 
 before_build:
   - set src_path=%cd%
   - call "C:\Qt\%qt%\bin\qtenv2.bat"
-  - if /i not %qt:msvc=% == %qt% call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - if /i not %qt:msvc=% == %qt% call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
   - cd %src_path%
 
 build_script:
