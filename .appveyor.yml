@@ -21,8 +21,8 @@ before_build:
   - cd %src_path%
 
 build_script:
-  - qmake -config release hello.pro
-  - if /i not %qt:msvc=% == %qt% jom
-  - if /i not %qt:mingw=% == %qt% mingw32-make -j4
+  - mkdir build && cd build
+  - cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_PREFIX_PATH="C:\Qt\%qt%" ..
+  - cmake --build . --parallel 4
 
 test: off
