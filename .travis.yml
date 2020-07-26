@@ -27,12 +27,7 @@ addons:
       - qt
       - cmake
 
-before_script:
-  - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then brew link --force qt; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export QMAKE_ARGS="-qt=5"; fi
-
 script:
-  - which qmake
   - mkdir build && cd build
   - cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_PREFIX_PATH="/usr/local/opt/qt5" ..
   - cmake --build . --parallel 2
