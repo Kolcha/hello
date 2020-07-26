@@ -22,7 +22,7 @@ before_build:
 
 build_script:
   - mkdir build && cd build
-  - cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_PREFIX_PATH="C:\Qt\%qt%" ..
+  - cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_PREFIX_PATH="C:\Qt\%qt%" ..
   - cmake --build . --parallel 4
 
 test: off
