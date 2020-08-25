@@ -1,0 +1,41 @@
+name: macOS Nightly Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Cache Qt
+        id: cache-qt
+        uses: actions/cache@v2
+        with:
+          path: ../Qt
+          key: ${{ runner.os }}-QtCache
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          version: '5.12.9'
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+
+      - name: Build
+        run: |
+           qmake
+           make -j$(sysctl -n hw.ncpu)
+
+      - name: Deploy Qt
+        run: macdeployqt hello.app -codesign=- -dmg
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: hello
+          path: hello.dmg
