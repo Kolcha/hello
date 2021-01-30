@@ -13,7 +13,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_MACOSX_BUNDLE ON)
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
 add_executable(hello
   main.cpp
@@ -22,4 +23,4 @@ add_executable(hello
   mainwindow.ui
 )
 
-target_link_libraries(hello PRIVATE Qt5::Widgets)
+target_link_libraries(hello PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
