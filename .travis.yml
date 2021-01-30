@@ -13,13 +13,12 @@ jobs:
 osx_image: 
   - xcode11.3
   - xcode11.6
-  - xcode12
+  - xcode12.2
 
 addons:
   apt:
     packages:
       - qtbase5-dev
-      - qttools5-dev-tools
       - cmake
 
   homebrew:
